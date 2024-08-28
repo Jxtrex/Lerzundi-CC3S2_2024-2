@@ -18,6 +18,8 @@ $ git config --list
 ```  
 ![altex text](../Imagenes/Actividad3_1.PNG)  
 
+<hr></hr>
+
 **git init: Donde comienza tu viaje de código**  
 
 ![alt text](../Imagenes/Actividad3_2.PNG)
@@ -29,12 +31,16 @@ Luego de crear un directorio y acceder a él, usamos `git init` para inicializar
 
 Vemos que ahora tenemos una carpeta oculta `.git` donde se guardarán los cambios en el archivo.
 
+<hr></hr>
+
 **git add: Preparando tu código**  
 
 ![alt Text](../Imagenes/Actividad3_5.PNG)  
 ![alt Text](../Imagenes/Actividad3_6.PNG)  
 
 Creamos un archivo `README.md` que luego rastreamos con el comando `git add README.md`, situándonos en el estado de preparación o index.  
+
+<hr></hr>
 
 **git commit: registra cambios**  
 
@@ -45,4 +51,21 @@ Guardamos nuestros cambios usando el `commit`:
 
 ```shell
 $ git commit -m "Initial commit with README.md
+```  
+
+Y ya no vemos al archivo `README.md` como no seguido.  
+
+<hr></hr>
+
+**git log: Recorrer el árbol de commits**  
+
+![alt tex](../Imagenes/Actividad3_9.PNG)  
+
+
+**¿Cuál es la salida de este comando?**
+
+```shell
+$ git log --graph --pretty=format:'%x09 %h %ar ("%an") %s'
 ```
+
+![alt text](../Imagenes/Actividad3_10.PNG)  
