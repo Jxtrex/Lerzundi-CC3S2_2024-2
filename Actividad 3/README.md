@@ -107,4 +107,47 @@ $ git branch <new-branch-name> <commit-hash>
 
 ### git checkout/git switch: Cambiar entre branches 
 
-**Cambiar a la branch feature/new-feature:** `$ git checkout feature/new-feature`
+**Cambiar a la branch feature/new-feature:**   
+
+```shell
+$ git checkout feature/new-feature
+```
+
+![alt text](../Imagenes/Actividad3_14.PNG)  
+
+**Ejemplos adicionales:**  
+
+**Crear una branch desde una branch específica**
+
+```java
+// Verifica en qué rama estás actualmente
+$ git branch
+// Cambia a la rama 'develop' si no estás en ella
+$ git checkout develop
+// Crea una nueva rama 'feature/login' desde 'develop'
+$ git branch feature/login develop
+// Cambia a la nueva rama 'feature/login'
+$ git checkout feature/login
+Crear una branch desde un commit específico
+// Verifica el historial de commits para identificar el commit específico
+$ git log --oneline
+// Crear una nueva rama 'hotfix/bugfix' basada en el commit 'abc1234'
+$ git branch hotfix/bugfix abc1234
+// Cambia a la nueva rama 'hotfix/bugfix'
+$ git checkout hotfix/bugfix
+```
+
+![alt text](../Imagenes/Actividad3_15.PNG)  
+
+### git merge \<Branch Name>: Fusionando branches
+
+Primero, cambia a la branch en la que deseas fusionar
+
+```shell
+$ git checkout main
+```
+Ahora, fusiona tu branch de características
+
+```shell
+$ git merge feature/new-feature
+```
