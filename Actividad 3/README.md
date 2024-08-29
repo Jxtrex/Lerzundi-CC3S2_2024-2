@@ -151,3 +151,27 @@ Ahora, fusiona tu branch de características
 ```shell
 $ git merge feature/new-feature
 ```
+
+![alt text](../Imagenes/Actividad3_16.PNG)  
+
+### git branch -d: Eliminando una Branch
+
+```shell
+$ git branch -d feature/new-feature
+```
+
+### Preguntas:  
+
+- ¿Cómo te ha ayudado Git a mantener un historial claro y organizado de tus cambios?
+  -  Haciendo un seguimiento de cada archivo mediante el comando mediante `git commit` y asignándole un indentificador único.
+- ¿Qué beneficios ves en el uso de branches para desarrollar nuevas características o corregir errores?
+  - Se hace evidente la utilidad de poder trabajar en un entorno aislado partiendo de la última revisión del software, nos permite simular decisiones en nuestro sistema y decidir si queremos mantener estas o no.
+- Realiza una revisión final del historial de commits para asegurarte de que todos los cambios se han registrado correctamente.
+  - ![alt text](../Imagenes/Actividad3_17.PNG)  
+- Revisa el uso de branches y merges para ver cómo Git maneja múltiples líneas de desarrollo
+  - [git Branch](#git-branch-entendiendo-los-conceptos-básicos-de-git-branch), [git Merge](#git-merge-branch-name-fusionando-branches)
+
+## Ejercicios
+
+### Ejercicio 1: Manejo avanzado de branches y resolución de conflictos
+
