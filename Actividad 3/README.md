@@ -181,3 +181,56 @@ Crea una nueva rama `feature/advanced-feature`
 $ git branch feature/advanced-feature
 $ git checkout feature/advanced-feature
 ```
+
+Modifica el archivo `main.py`
+
+```python
+def greet():
+ print('Hello from advanced feature')
+
+ greet()
+```
+
+y confirma los cambios
+
+```shell
+$ git add main.py
+$ git commit -m "Add greet function in advanced feature"
+```
+
+Realizamos otro cambio en la rama `main`
+
+```shell
+$ git checkout main
+```
+
+**main.py**
+```
+print('Hello World - updated in main')
+```
+
+```shell
+$ git add main.py
+$ git commit -m "Update main.py message in main branch"
+```
+
+Intentamos fusionar las ramas, pero nos topamos con un conflicto  
+
+```shell
+$ git merge feature/advanced-feature
+```
+
+![alt text](../Imagenes/Actividad3_18.PNG)  
+En vscode podemos abrir el Menú de Merge para solucionar los conflictos y completar el Merge con un botón
+
+```shell
+$ git add main.py
+$ git commit -m "Resolve merge conflict between main and feature/advanced-feature"
+```
+Finalizamos el merge y eliminamos la rama creada
+
+```shell
+$ git branch -d feature/advanced-feature
+```
+
+### Ejercicio 2: Exploración y manipulación del historial de commits
