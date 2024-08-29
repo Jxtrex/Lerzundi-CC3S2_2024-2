@@ -175,3 +175,9 @@ $ git branch -d feature/new-feature
 
 ### Ejercicio 1: Manejo avanzado de branches y resolución de conflictos
 
+Crea una nueva rama `feature/advanced-feature`
+
+```shell
+$ git branch feature/advanced-feature
+$ git checkout feature/advanced-feature
+```
