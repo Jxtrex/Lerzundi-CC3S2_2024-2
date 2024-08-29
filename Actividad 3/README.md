@@ -234,3 +234,17 @@ $ git branch -d feature/advanced-feature
 ```
 
 ### Ejercicio 2: Exploración y manipulación del historial de commits
+
+Ver el historial de commits:
+
+```shell
+$ git log -p
+```
+
+**Examina las diferencias introducidas en cada commit. ¿Qué cambios fueron realizados en cada uno?**  
+Se muestran en verde las líneas agregadas a nuestros archivos 
+
+Filtrar las commits por autor:  
+`$ git log --author="Lerzundi"`
+
+![alt text](../Imagenes/Actividad3_19.PNG)
