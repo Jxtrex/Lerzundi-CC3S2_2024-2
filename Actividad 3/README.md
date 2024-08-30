@@ -292,3 +292,48 @@ $ git log --graph --oneline --all
 Del gráfico podemos obtener el commit exacto en la que una nueva funcionalidad fue implementada o cuándo un bug fue solucionado. Adicionalmente, las versiones del software representadas en las ramas activas del programa como podría ser una rama de producción y otra de testeo. Con la cantidad de ramas fusionadas también podemos determinar la cantidad de revisiones que tuvo el software.
 
 ## Ejercicio 3: Creación y gestión de branches desde commits específicos
+
+**<ins>Crea una nueva rama desde un commit específico:</ins>**  
+
+```shell
+$ git branch bugfix/rollback-feature <commit-hash>
+$ git checkout bugfix/rollback-feature
+```
+**<ins>Modificar y confirmar cambios en la nueva rama:</ins>**
+
+**main.py**
+
+```python
+print('Hello World - updated in main')
+
+def greet():
+    print('Fixed in feature')
+```
+
+Añade y confirma los cambios en la nueva rama:
+```shell
+$ git add main.py
+$ git commit -m "Fix bug in rollback feature"
+```
+
+**<ins>Fusionar los cambios en la rama principal:</ins>**
+
+```shell
+$ git checkout main
+$ git merge bugfix/rollback-feature
+```
+
+**<ins>Explorar el historial después de la fusión:</ins>**
+
+```shell
+$ git log --graph --oneline
+```
+![atl text](../Imagenes/Actividad3_23.PNG)  
+![atl text](../Imagenes/Actividad3_24.PNG)  
+
+**<ins>Eliminar la rama bugfix/rollback-feature:</ins>**
+
+```shell
+$ git branch -d bugfix/rollback-feature
+```
+## Ejercicio 4:
