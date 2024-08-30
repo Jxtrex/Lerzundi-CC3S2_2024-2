@@ -244,7 +244,51 @@ $ git log -p
 **Examina las diferencias introducidas en cada commit. ¿Qué cambios fueron realizados en cada uno?**  
 Se muestran en verde las líneas agregadas a nuestros archivos 
 
-Filtrar las commits por autor:  
-`$ git log --author="Lerzundi"`
+**<ins>Filtrar las commits por autor:</ins>**  
 
-![alt text](../Imagenes/Actividad3_19.PNG)
+```shell
+$ git log --author="Lerzundi"
+```
+
+![alt text](../Imagenes/Actividad3_19.PNG)  
+
+<ins>**Revertir un commit:**</ins>
+
+**main.py**
+```python
+print("Hello World")
+
+
+def greet():
+    print("Hello from advanced feature")
+
+    greet()
+
+
+print("Hello from advanced feature")
+```
+Revertimos el último commit, para borra la función repetida en main.
+
+```shell
+$ git revert HEAD
+```
+![alt text](../Imagenes/Actividad3_20.PNG)  
+
+**<ins>Rebase interactivo:</ins>**
+
+```shell
+$ git rebase -i HEAD~3
+```  
+![alt text](../Imagenes/Actividad3_21.PNG)  
+
+**<ins>Visualización gráfica del historial</ins>**
+
+```shell
+$ git log --graph --oneline --all
+```  
+![alt text](../Imagenes/Actividad3_22.PNG)  
+
+**Reflexiona sobre cómo el historial de tu proyecto se visualiza en este formato. ¿Qué información adicional puedes inferir?**  
+Del gráfico podemos obtener el commit exacto en la que una nueva funcionalidad fue implementada o cuándo un bug fue solucionado. Adicionalmente, las versiones del software representadas en las ramas activas del programa como podría ser una rama de producción y otra de testeo. Con la cantidad de ramas fusionadas también podemos determinar la cantidad de revisiones que tuvo el software.
+
+## Ejercicio 3: Creación y gestión de branches desde commits específicos
