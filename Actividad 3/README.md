@@ -16,18 +16,18 @@ Y confirmamos el cambio usando la bandera `--list`:
 ```shell
 $ git config --list
 ```  
-![altex text](../Imagenes/Actividad3_1.PNG)  
+![altex text](../Imagenes/Actividad%203/Actividad3_1.PNG)  
 
 <hr></hr>
 
 ### git init: Donde comienza tu viaje de código  
 
-![alt text](../Imagenes/Actividad3_2.PNG)
+![alt text](../Imagenes/Actividad%203/Actividad3_2.PNG)
 
 Luego de crear un directorio y acceder a él, usamos `git init` para inicializar un repositorio  
 
-![alt text](../Imagenes/Actividad3_3.PNG)  
-![alt text](../Imagenes/Actividad3_4.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_3.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_4.PNG)  
 
 Vemos que ahora tenemos una carpeta oculta `.git` donde se guardarán los cambios en el archivo.
 
@@ -35,8 +35,8 @@ Vemos que ahora tenemos una carpeta oculta `.git` donde se guardarán los cambio
 
 ### git add: Preparando tu código  
 
-![alt Text](../Imagenes/Actividad3_5.PNG)  
-![alt Text](../Imagenes/Actividad3_6.PNG)  
+![alt Text](../Imagenes/Actividad%203/Actividad3_5.PNG)  
+![alt Text](../Imagenes/Actividad%203/Actividad3_6.PNG)  
 
 Creamos un archivo `README.md` que luego rastreamos con el comando `git add README.md`, situándonos en el estado de preparación o index.  
 
@@ -44,8 +44,8 @@ Creamos un archivo `README.md` que luego rastreamos con el comando `git add READ
 
 ### git commit: registra cambios  
 
-![alt text](../Imagenes/Actividad3_7.PNG)  
-![alt text](../Imagenes/Actividad3_8.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_7.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_8.PNG)  
 
 Guardamos nuestros cambios usando el `commit`:  
 
@@ -59,7 +59,7 @@ Y ya no vemos al archivo `README.md` como no seguido.
 
 ### git log: Recorrer el árbol de commits  
 
-![alt tex](../Imagenes/Actividad3_9.PNG)  
+![alt tex](../Imagenes/Actividad%203/Actividad3_9.PNG)  
 
 
 **¿Cuál es la salida de este comando?**
@@ -68,7 +68,7 @@ Y ya no vemos al archivo `README.md` como no seguido.
 $ git log --graph --pretty=format:'%x09 %h %ar ("%an") %s'
 ```
 
-![alt text](../Imagenes/Actividad3_10.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_10.PNG)  
 
 Usemos el comando `git log` para una siguiente actividad, creamos el archivo `CONTRIBUTING.md` y editamos el archivo `README.md` con el texto `"README\n\nWelcome to the project"`.
 Luego los añadimos a `git` y hacemos un commit.
@@ -84,14 +84,14 @@ Y hacemos un commit luego de registrar los cambios.
 ```shell
 git log --oneline
 ```  
-![alt text](../Imagenes/Actividad3_11.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_11.PNG)  
 
 ## Trabajar con branches: La piedra angular de la colaboración
 
 ### git branch: Entendiendo los conceptos básicos de Git branch
 
-![alt text](../Imagenes/Actividad3_11.PNG)  
-![alt text](../Imagenes/Actividad3_12.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_11.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_12.PNG)  
 
 **Crear una branch desde una branch específica**  
 
@@ -113,7 +113,7 @@ $ git branch <new-branch-name> <commit-hash>
 $ git checkout feature/new-feature
 ```
 
-![alt text](../Imagenes/Actividad3_14.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_14.PNG)  
 
 **Ejemplos adicionales:**  
 
@@ -137,7 +137,7 @@ $ git branch hotfix/bugfix abc1234
 $ git checkout hotfix/bugfix
 ```
 
-![alt text](../Imagenes/Actividad3_15.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_15.PNG)  
 
 ### git merge \<Branch Name>: Fusionando branches
 
@@ -152,7 +152,7 @@ Ahora, fusiona tu branch de características
 $ git merge feature/new-feature
 ```
 
-![alt text](../Imagenes/Actividad3_16.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_16.PNG)  
 
 ### git branch -d: Eliminando una Branch
 
@@ -167,7 +167,7 @@ $ git branch -d feature/new-feature
 - ¿Qué beneficios ves en el uso de branches para desarrollar nuevas características o corregir errores?
   - Se hace evidente la utilidad de poder trabajar en un entorno aislado partiendo de la última revisión del software, nos permite simular decisiones en nuestro sistema y decidir si queremos mantener estas o no.
 - Realiza una revisión final del historial de commits para asegurarte de que todos los cambios se han registrado correctamente.
-  - ![alt text](../Imagenes/Actividad3_17.PNG)  
+  - ![alt text](../Imagenes/Actividad%203/Actividad3_17.PNG)  
 - Revisa el uso de branches y merges para ver cómo Git maneja múltiples líneas de desarrollo
   - [git Branch](#git-branch-entendiendo-los-conceptos-básicos-de-git-branch), [git Merge](#git-merge-branch-name-fusionando-branches)
 
@@ -220,7 +220,7 @@ Intentamos fusionar las ramas, pero nos topamos con un conflicto
 $ git merge feature/advanced-feature
 ```
 
-![alt text](../Imagenes/Actividad3_18.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_18.PNG)  
 En vscode podemos abrir el Menú de Merge para solucionar los conflictos y completar el Merge con un botón
 
 ```shell
@@ -250,7 +250,7 @@ Se muestran en verde las líneas agregadas a nuestros archivos
 $ git log --author="Lerzundi"
 ```
 
-![alt text](../Imagenes/Actividad3_19.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_19.PNG)  
 
 <ins>**Revertir un commit:**</ins>
 
@@ -272,21 +272,21 @@ Revertimos el último commit, para borra la función repetida en main.
 ```shell
 $ git revert HEAD
 ```
-![alt text](../Imagenes/Actividad3_20.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_20.PNG)  
 
 **<ins>Rebase interactivo:</ins>**
 
 ```shell
 $ git rebase -i HEAD~3
 ```  
-![alt text](../Imagenes/Actividad3_21.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_21.PNG)  
 
 **<ins>Visualización gráfica del historial</ins>**
 
 ```shell
 $ git log --graph --oneline --all
 ```  
-![alt text](../Imagenes/Actividad3_22.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_22.PNG)  
 
 **Reflexiona sobre cómo el historial de tu proyecto se visualiza en este formato. ¿Qué información adicional puedes inferir?**  
 Del gráfico podemos obtener el commit exacto en la que una nueva funcionalidad fue implementada o cuándo un bug fue solucionado. Adicionalmente, las versiones del software representadas en las ramas activas del programa como podría ser una rama de producción y otra de testeo. Con la cantidad de ramas fusionadas también podemos determinar la cantidad de revisiones que tuvo el software.
@@ -328,8 +328,8 @@ $ git merge bugfix/rollback-feature
 ```shell
 $ git log --graph --oneline
 ```
-![atl text](../Imagenes/Actividad3_23.PNG)  
-![atl text](../Imagenes/Actividad3_24.PNG)  
+![atl text](../Imagenes/Actividad%203/Actividad3_23.PNG)  
+![atl text](../Imagenes/Actividad%203/Actividad3_24.PNG)  
 
 **<ins>Eliminar la rama bugfix/rollback-feature:</ins>**
 
@@ -359,9 +359,9 @@ $ git commit -m "Introduce a change to be reset"
 $ git reset --hard HEAD~1
 ```
 
-![alt text](../Imagenes/Actividad3_25.PNG)
+![alt text](../Imagenes/Actividad%203/Actividad3_25.PNG)
 
-![alt text](../Imagenes/Actividad3_26.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_26.PNG)  
 
 **<ins>Usar git restore para deshacer cambios no confirmados:</ins>**
 
@@ -378,7 +378,7 @@ Usa git restore para deshacer este cambio no confirmado:
 $ git restore README.md
 ```
 
-![alt text](../Imagenes/Actividad3_27.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_27.PNG)  
 
 ## Ejercicio 5: Trabajo colaborativo y manejo de pull requests
 **<ins>[Repositorio](https://github.com/Jxtrex/Actividad3)</ins>**
@@ -386,31 +386,56 @@ $ git restore README.md
 
 **<ins>Crear un nuevo repositorio remoto:</ins>**
 
-![alt text](../Imagenes/Actividad3_28.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_28.PNG)  
 
-![alt text](../Imagenes/Actividad3_29.PNG)
+![alt text](../Imagenes/Actividad%203/Actividad3_29.PNG)
 
 **<ins>Crear una nueva rama para desarrollo de una caracterìstica:</ins>**
 
-![alt text](../Imagenes/Actividad3_30.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_30.PNG)  
 
 **<ins>Realizar cambios y enviar la rama la repositorio remoto:</ins>**
 
-![alt text](../Imagenes/Actividad3_31.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_31.PNG)  
 
 **<ins>Abrir un pull request:</ins>**
 
-![alt text](../Imagenes/Actividad3_32.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_32.PNG)  
 
 **<ins>Revisar y fusionar el pull request:</ins>**
 
-![alt text](../Imagenes/Actividad3_33.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_33.PNG)  
 
 **<ins>Eliminar la rama remota y local:</ins>**
 
-![alt text](../Imagenes/Actividad3_34.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_34.PNG)  
 
-![alt text](../Imagenes/Actividad3_35.PNG)
+![alt text](../Imagenes/Actividad%203/Actividad3_35.PNG)
 
 ## Ejercicio6: Cherry-Picking y Git Stash
+
+**<ins>Hacer cambios en main.py:</ins>**
+
+![alt text](../Imagenes/Actividad%203/Actividad3_36.PNG)  
+
+**<ins>Crear una nueva rama y aplicar el commit específico:</ins>**
+
+![alt text](../Imagenes/Actividad%203/Actividad3_37.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_38.PNG)  
+
+**<ins>Guardar temporalmente cambios no confirmados:</ins>**
+
+![alt text](../Imagenes/Actividad%203/Actividad3_39.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_40.PNG)  
+
+
+**<ins>Aplicar los cambios guardados:</ins>**
+Realizar otros cambios y confírmalos si es necesario
+
+![alt text](../Imagenes/Actividad%203/Actividad3_41.PNG)  
+
+Luego, recupera los cambios guardados anteriormente
+
+![alt text](../Imagenes/Actividad%203/Actividad3_42.PNG)  
+![alt text](../Imagenes/Actividad%203/Actividad3_43.PNG)  
 
