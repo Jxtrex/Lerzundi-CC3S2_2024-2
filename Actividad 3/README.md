@@ -336,4 +336,81 @@ $ git log --graph --oneline
 ```shell
 $ git branch -d bugfix/rollback-feature
 ```
-## Ejercicio 4:
+## Ejercicio 4: Manipulación y restauración de commits con git reset y git restore
+
+**<ins>Hacer cambios en el archivo main.py:</ins>**
+
+**main.py**
+
+```python
+print('This change will be reset')
+```
+
+Añade y confirma los cambios:
+
+```shell
+$ git add main.py
+$ git commit -m "Introduce a change to be reset"
+```
+
+**<ins>Usar git reset para deshacer el commit:</ins>**
+
+```shell
+$ git reset --hard HEAD~1
+```
+
+![alt text](../Imagenes/Actividad3_25.PNG)
+
+![alt text](../Imagenes/Actividad3_26.PNG)  
+
+**<ins>Usar git restore para deshacer cambios no confirmados:</ins>**
+
+Realiza un cambio en README.md y no lo confirmes:  
+
+```shell
+$ echo "Another line in README" >> README.md
+$ git status
+```
+
+Usa git restore para deshacer este cambio no confirmado:
+
+```shell
+$ git restore README.md
+```
+
+![alt text](../Imagenes/Actividad3_27.PNG)  
+
+## Ejercicio 5: Trabajo colaborativo y manejo de pull requests
+**<ins>[Repositorio](https://github.com/Jxtrex/Actividad3)</ins>**
+
+
+**<ins>Crear un nuevo repositorio remoto:</ins>**
+
+![alt text](../Imagenes/Actividad3_28.PNG)  
+
+![alt text](../Imagenes/Actividad3_29.PNG)
+
+**<ins>Crear una nueva rama para desarrollo de una caracterìstica:</ins>**
+
+![alt text](../Imagenes/Actividad3_30.PNG)  
+
+**<ins>Realizar cambios y enviar la rama la repositorio remoto:</ins>**
+
+![alt text](../Imagenes/Actividad3_31.PNG)  
+
+**<ins>Abrir un pull request:</ins>**
+
+![alt text](../Imagenes/Actividad3_32.PNG)  
+
+**<ins>Revisar y fusionar el pull request:</ins>**
+
+![alt text](../Imagenes/Actividad3_33.PNG)  
+
+**<ins>Eliminar la rama remota y local:</ins>**
+
+![alt text](../Imagenes/Actividad3_34.PNG)  
+
+![alt text](../Imagenes/Actividad3_35.PNG)
+
+## Ejercicio6: Cherry-Picking y Git Stash
+
