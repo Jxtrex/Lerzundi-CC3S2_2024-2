@@ -13,9 +13,9 @@ Aplicar los conceptos de DevOps en un entorno práctico, configurando un pipelin
 un proyecto de software y experimentando con la automatización de procesos en un entorno local
 utilizando Docker.
 
-### <ins>**Intrucciones:**</ins>
+ <big><big><big><ins>**Instrucciones:**</ins></big></big></big>
 
-### Configuración del entorno:
+## Configuración del entorno:
 Dentro de `/devops-practice/` creamos un proyecto con npm  
 
 - `npm init -y`: inicializa un proyecto y omite las preguntas
@@ -110,7 +110,9 @@ Configuramos el script de test en `package.json`
   }
 }
 ```
-### Pipeline CI/CD  
+## Pipeline CI/CD  
+
+### Parte 1: Configura integración continua (CI) con Github Actions  
 
 Usaremos Github Actions para CI, por lo que creamos la siguiente estructura  
 ```
@@ -152,5 +154,34 @@ jobs:
 
             - name: Run tests
               run: npm test
+```
+
+### Parte 2: Configura entrega continua (CD) con Docker  
+
+Creamos nuestro dockerfile para inicializar nuestro contenedor:
+
+**Dockerfile**
+
+```dockerfile
+# Usa la imagen oficial de Node.js
+FROM node:14
+
+# Establece el directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copia los archivos package.json y package-lock.json
+COPY package*.json ./
+
+# Instala las dependencias
+RUN npm install
+
+# Copia el resto de los archivos de la aplicación
+COPY . .
+
+# Expone el puerto en el que la aplicación correrá
+EXPOSE 3000
+
+# Comando para iniciar la aplicación
+CMD [ "node" , "src/app.js"]
 ```
 
