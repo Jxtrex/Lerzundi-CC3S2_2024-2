@@ -26,3 +26,9 @@ jobs:
             - name: Run tests
               run: npm test
 
+            - name: Run Docker image
+              run: docker build -t devops-practice .
+
+            - name: Run Docker container
+              run: docker run -d -p 3000:3000 devops-practice
+
