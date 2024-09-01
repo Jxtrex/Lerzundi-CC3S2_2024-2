@@ -158,6 +158,10 @@ jobs:
               run: npm test
 ```
 
+Si hacemos push luego de crear este archivo podremos ver como Github ejecuta automáticamente ejecuta este workflow:
+
+![alt text](../Imagenes/Actividad%201/Actividad1_4.PNG)  
+
 ### Parte 2: Configura entrega continua (CD) con Docker  
 
 Creamos nuestro dockerfile para inicializar nuestro contenedor:
@@ -202,4 +206,62 @@ Creamos un contenedor a partir de nuestra imagen
 $ docker run -p 3000:3000 devops-practice
 ```
 ![alt text](../Imagenes/Actividad%201/Actividad1_2.PNG)  
-![alt text](../Imagenes/Actividad%201/Actividad1_3.PNG)
+![alt text](../Imagenes/Actividad%201/Actividad1_3.PNG)  
+
+## Automatiza el despliegue con Github Actions:  
+
+### Actualiza el archivo `.github/workflows/ci.yml` para construir y desplegar la imagen de Docker:
+
+```yaml
+- name: Run Docker image
+  run: docker build -t devops-practice .
+
+- name: Run Docker container
+  run: docker run -d -p 3000:3000 devops-practice
+```
+
+### Verifica que la aplicación se despliegue correctamente localmente usando Docker:
+
+Verificamos que la aplicación se ejecute correctamente yendo a loca `http://localhost:3000`  
+
+![alt text](../Imagenes/Actividad%201/Actividad1_5.PNG)  
+
+### Automatización  
+
+Usamos docker compose para definir el entorno de nuestra aplicación  
+
+<big>**docker-compose.yml**</big>  
+
+```yaml
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+```
+Corremos la aplicación desde nuestro archivo .yml  
+
+```shell
+$ docker compose up --build -d
+```
+![alt text](../Imagenes/Actividad%201/Actividad1_6.PNG)  
+
+Y podemos comprobar que el contenedor se está ejecutando correctamente  
+![alt text](../Imagenes/Actividad%201/Actividad1_7.PNG) 
+
+Y que nuestro mensaje `Hello, World!` se visualiza correctamente en la dirección `http://localhost:3000/`  
+
+![alt text](../Imagenes/Actividad%201/Actividad1_8.PNG)
+
+## Conclusiones
+
+El uso de CI nos permite ahorrar tiempo usado en filtrar y analizar el código que estamos subiendo y mediante un criterio estandarizado dentro de nuestra organización, aceptar que se integre a nuestra línea principal de desarrollo o no. En este caso solo hemos usado CI para definir el entorno básico de Node.js y correr un test básico, sin embargo ya podemos reconocer la utilidad que tiene el automatizar el proceso de integración de código.
+
+Para el caso de CD usamos docker y docker compose, el primero nos permite aislar el entorno dónde reside nuestra aplicación, el segundo nos permite hacer lo mismo para múltiples contenedores con las mismas espicificaciones. Esto nos permite asegurar la reproducibilidad de nuestra aplicación, lo que permite al equipo encargado del mantenimiendo de código trabajar con la misma versión del software. 
+
+El procesor completo permite delimitar las funciones del tratamiento de software y minimiza las probabilidades de errores por incompatibilidad, revisiones no supervisadas y conflictos al implementar nuevas funcionalidades. Por consiguiente, los desarrolladores puede concentrarse en la construcción del código sabiendo que pueden integrar su contribución al proyecto con seguridad y respeto de los lineamientos de calidad, por otro lado el equipo de operaciones puede dedicarse al soporte del código bajo condiciones determinísticas, es decir, que cumplan con las expectativas que tienen del código y que no tengan el riesgo de variar en medio del proceso de mantenimiento de código.
+
