@@ -116,13 +116,15 @@ Configuramos el script de test en `package.json`
 
 Usaremos Github Actions para CI, por lo que creamos la siguiente estructura  
 ```
-└── 📁devops-practice
+└── 📁Lerzundi-CC3S2_2024-2
     └── 📁.github
         └── 📁workflows
             └── ci.yml
 ```
+Nuestra carpeta .githubd tiene que estar en el primer nivel dentro de nuestro repositorio, de otro modo github no lo reconocerá como workflow válido.
 
-Y creamos nuestro archivo `YAML` dónde definiremos **<i>Events</i>**, **<i>Jobs</i>**, **<i>Runners</i>**, **<i>Steps</i>** y <i>**Actions**</i> .  
+
+Luego creamos nuestro archivo `YAML` dónde definiremos **<i>Events</i>**, **<i>Jobs</i>**, **<i>Runners</i>**, **<i>Steps</i>** y <i>**Actions**</i> .  
 
 <big>**ci.yml**</big>
 
@@ -184,4 +186,20 @@ EXPOSE 3000
 # Comando para iniciar la aplicación
 CMD [ "node" , "src/app.js"]
 ```
+Nos ubicamos en el directorio `/Actividad 1/devops-practice/` en donde está nuestro archivo `Dockerfile` y construimos una nueva imagen Docker a partir de este archivo  
 
+```shell
+$ docker build -t devops-practice .
+```
+
+Usamos `docker images` para verificar que se creó la imagen correctamente  
+
+![alt text](../Imagenes/Actividad%201/Actividad1_1.PNG)  
+
+Creamos un contenedor a partir de nuestra imagen  
+
+```shell
+$ docker run -p 3000:3000 devops-practice
+```
+![alt text](../Imagenes/Actividad%201/Actividad1_2.PNG)  
+![alt text](../Imagenes/Actividad%201/Actividad1_3.PNG)
