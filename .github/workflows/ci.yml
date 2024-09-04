@@ -27,12 +27,12 @@ jobs:
               run: npm test
             
             # Comandos para la Actividad 1
-            # - name: Run Docker image
-            #   run: docker build -t devops-practice .
+            - name: Run Docker image
+              run: docker build -t devops-practice .
 
-            # - name: Run Docker container
-            #   run: docker run -d -p 3000:3000 devops-practice
+            - name: Run Docker container
+              run: docker run -d -p 3000:3000 devops-practice
 
             # Comandos para la Actividad 2
-            - name: Run security audit
-              run: npm audit
+            # - name: Run security audit
+            #   run: npm audit

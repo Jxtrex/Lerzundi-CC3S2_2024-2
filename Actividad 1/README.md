@@ -39,7 +39,7 @@ Esto nos generará **package.json**
 ```
 Instalamos dependencias  
 
-- `npm install express jest`  
+- `npm install express jest supertest`  
 
 Creamos la estructura que usaremos para el proyecto  
 
