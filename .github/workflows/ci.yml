@@ -22,17 +22,23 @@ jobs:
                 node-version: '14'
             - name: Install dependencies
               run: npm install
+              # Directorio de Trabajo
+              working-directory: "Actividad 2/devops-practice"
 
             - name: Run tests
               run: npm test
-            
-            # Comandos para la Actividad 1
-            - name: Run Docker image
-              run: docker build -t devops-practice .
+              # Directorio de Trabajo
+              working-directory: "Actividad 2/devops-practice"
 
-            - name: Run Docker container
-              run: docker run -d -p 3000:3000 devops-practice
+            # Comandos para la Actividad 1
+            # - name: Run Docker image
+            #   run: docker build -t devops-practice .
+
+            # - name: Run Docker container
+            #   run: docker run -d -p 3000:3000 devops-practice
 
             # Comandos para la Actividad 2
-            # - name: Run security audit
-            #   run: npm audit
+            - name: Run security audit
+              run: npm audit
+              # Directorio de Trabajo
+              working-directory: "Actividad 2/devops-practice"
