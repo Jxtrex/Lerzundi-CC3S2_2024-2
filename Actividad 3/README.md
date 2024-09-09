@@ -1,4 +1,4 @@
-# Actividad: Introducción a Git - conceptos básicos y operaciones esenciales
+# Actividad 3: Introducción a Git - conceptos básicos y operaciones esenciales
 
 ## Conceptos básicos de Git: Comienza con una experiencia práctica
 

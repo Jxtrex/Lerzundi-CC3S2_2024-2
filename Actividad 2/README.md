@@ -1,4 +1,5 @@
 # Actividad 2
+
 // TODO
 **Preguntas de Reflexión(Sobre la lectura 2)**
 - **¿Qué significa "desplazar a la izquierda" en el contexto de DevSecOps y por qué es importante?.**
