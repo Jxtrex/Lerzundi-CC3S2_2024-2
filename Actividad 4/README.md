@@ -138,6 +138,7 @@ $ git commit -m "Agregar LICENSE.txt"
 ```
 
 Ahora tu estructura de commits debería verse como la imagen:  
+
 ![alt text](../Imagenes/Actividad%204/Actividad4_5.png)  
 
 Cambiar a la rama mainy realizar la función squash:  
@@ -150,8 +151,12 @@ $ git merge --squash add-basic-files
 Los commits luego se aplastan y se convierten en un solo commit.
 Para completar la fusión squash, realiza un commit:  
 
+```shell
 $ git add .
 $ git commit -m "Agregar documentación estándar del repositorio"
 $ git log --graph --oneline
+```
 
 Esto combinará todos los cambios de la rama add-basic-files en un solo nuevo commit en la rama main:  
+
+![alt text](../Imagenes/Actividad%204/Actividad4_6.png/)
