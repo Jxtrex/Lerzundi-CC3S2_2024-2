@@ -100,3 +100,58 @@ $ git log --graph --oneline
 ```
 
 ![alt text](../Imagenes/Actividad%204/Actividad4_4.png)
+
+### 3. Fusión squash (git merge --squash)
+
+**Pasos**
+
+Crear un nuevo directorio y realizar cambios:  
+
+```shell
+$ mkdir try-squash-merge
+$ cd try-squash-merge
+```
+
+```shell
+$ echo "# Mi Proyecto" > README.md
+$ git add README.md
+$ git commit -m "Commit inicial en main"
+```
+
+Crear una nueva rama y realizar cambios:  
+
+```shell
+$ git checkout -b add-basic-files
+
+```
+
+```shell
+$ echo "# CÓMO CONTRIBUIR" >> CONTRIBUTING.md
+$ git add CONTRIBUTING.md
+$ git commit -m "Agregar CONTRIBUTING.md
+```
+
+```shell
+$ echo "# LICENCIA" >> LICENCIA.txt
+$ git add LICENSE.txt
+$ git commit -m "Agregar LICENSE.txt"
+```
+
+Ahora tu estructura de commits debería verse como la imagen:  
+![alt text](../Imagenes/Actividad%204/Actividad4_5.png)  
+
+Cambiar a la rama mainy realizar la función squash:  
+
+```shell
+$ git checkout main
+$ git merge --squash add-basic-files
+```
+
+Los commits luego se aplastan y se convierten en un solo commit.
+Para completar la fusión squash, realiza un commit:  
+
+$ git add .
+$ git commit -m "Agregar documentación estándar del repositorio"
+$ git log --graph --oneline
+
+Esto combinará todos los cambios de la rama add-basic-files en un solo nuevo commit en la rama main:  
