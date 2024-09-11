@@ -89,3 +89,29 @@ $ docker container ls -a
 ![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_17.png)  
 ![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_22.png)  
 > Representación gráfica de lo realizado en este laboratorio  
+
+El contenedor que contiene el archivo `hello.txt` , es el que tiene como comando `/bin/ash`.
+
+Correr el contenedor usando `start`:  
+```shell
+$ docker container  start 656aee2dd42f
+```
+![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_18.png)  
+El contenedor se ejecuta y está esperando a que se le ingrese un comando.  
+
+Enviar un comando al contenedor usando `exec`:  
+```shell
+$ docker container exec 656aee2dd42f ls
+``` 
+![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_19.png)  
+Al usar `ls` se puede ver que el archivo `hello.txt` se encuentra presente en esta intancia de alpine.
+
+![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_23.png)  
+
+
+
+
+
+
+![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_20.png)
+![alt text](../Imagenes/Actividad%20Play%20with%20Docker/ActividadPlaywithDocker_21.png)
