@@ -1,0 +1,1 @@
+# Actividad 6: Navegando conflictos y versionado en un entorno devOps

@@ -3,7 +3,7 @@ Todas las actividades de UNIvirtual, tareas y pruebas del curso.
 
 ---
 
-- [ ] Actividad 1
+- [X] Actividad 1
 - [ ] Actividad 2
 - [X] Actividad 3
 - [ ] Actividad 4

@@ -1,13 +1,16 @@
 # Actividad 1
 
-// TODO
 **Preguntas de Reflexión(Sobre la lectura 1)**
-- **¿Por qué surgió la necesidad de DevOps en el desarrollo de software?**
-- **Describe cómo el principio de mejora continua afecta tanto a los aspectos técnicos como culturales de una organización.**
-- **¿Qué significa que DevOps no se trata solo de herramientas, individuoso procesos?**
-- **Según el texto, ¿cómo contribuyen los equipos autónomos y multifuncionales a una implementación exitosa de DevOps?**
-
-- **Explica cómo la falta de comunicación y coordinación entre los equipos de desarrollo y operaciones en el pasado ha llevado a la creación de DevOps.**
+- **¿Por qué surgió la necesidad de DevOps en el desarrollo de software?**  
+> Por las consecuencias de la separación marcada de las responsabilidades entre el equipo de Desarrollo y el de Operaciones de IT. Estas son: la falta de comunicación efectiva, la carencia de un plan organizado que incluya a los dos equipos y el costo temporal necesario para adecuar el software a los estándares que tenía cada equipo.
+- **Describe cómo el principio de mejora continua afecta tanto a los aspectos técnicos como culturales de una organización.**  
+> En el aspecto técnico la mejora continua asegura que el software mantenga un estándar de calidad, que sea fácilmente mutable y eficiente , lo que culmina con el fortalecimiento de la entrega de software. En el aspecto cultural la mejora continua contribuye a la eliminación de los silos en las organizaciones teniendo como eje central el desarrollo colaborativo el cual otorga a cada participante una tarea de la que pueda sentirse responsable y que al culminarla le otorge realización personal.  
+- **¿Qué significa que DevOps no se trata solo de herramientas, individuos o procesos?**  
+> Que reducir DevOps a alguna de esas cosas merma considerablemente el significado real de DevOps. Si nos centramos en las herramientas, podemos adecuar herramientas diseñadas para DevOps a metodologías lineales y arcaicas; si nos centramos en personas, se crean roles centrados en la aplicación de DevOps que reducen esta filosofía al accionar de una persona sin considerar la cultura de la empresa que lo rodea; si nos centramos en procesos, la definición de DevOps abarca más allá de la etapa de construcción del software por lo que limitarse a la etapa de desarrollo incide en un error de la propia definición de la filosofía DevOps.
+- **Según el texto, ¿cómo contribuyen los equipos autónomos y multifuncionales a una implementación exitosa de DevOps?**  
+> Los equipos usan esa autonomía para realizar decisiones rápidas y relevantes respecto al ciclo completo del software y su posterior mantenimiento, esto agiliza el proceso creativo y otorga adaptabilidad frente a los cambios.  
+- **Explica cómo la falta de comunicación y coordinación entre los equipos de desarrollo y operaciones en el pasado ha llevado a la creación de DevOps.**  
+> Habiendo sido reconocido el problema de la falta de comunicación las organizaciones se dieron a la tarea de implementar medidas que contrarresten esta limitación, DevOps nació como una solución tentativa a este problema, teniendo como característica el ir en una dirección contraria a muchas de las taras que sufrían los euqipos involucrados como: apostar por la integración entre IT y Devs en vez de respetar silos establecidos, integración continua en vez de lanzamientos poco frecuentes y más estables, llevar la infraestructura al campo del código de configuración (Docker), responsabilidad compartida en aras de la solución de problemas.  
 <hr></hr>
 
 Aplicar los conceptos de DevOps en un entorno práctico, configurando un pipeline básico de CI/CD para
