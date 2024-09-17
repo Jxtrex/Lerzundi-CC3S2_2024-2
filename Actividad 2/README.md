@@ -11,7 +11,8 @@
 
 <hr></hr>
 
->[!IMPORTANT] Se usará el proyecto devops-practice de la Actividad 1 con mínimas modificaciones para esta Actividad 2.  
+>[!IMPORTANT] 
+> Se usará el proyecto devops-practice de la Actividad 1 con mínimas modificaciones para esta Actividad 2.  
 
 Aplicar los conceptos de DevSecOps, IaC, y Observabilidad en un entorno práctico, utilizando herramientas que permiten integrar seguridad, gestionar infraestructura como código, y mejorar la visibilidad del sistema en tiempo real.
 
