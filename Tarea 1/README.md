@@ -46,7 +46,7 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host","0.0.0.0","--port","8000"]
+CMD ["uvicorn", "main:app", "--host","0.0.0.0","--port","8000"]
 ```
 
 Y un archivo docker-compose.yml  
@@ -125,4 +125,6 @@ def test_question_correct_answer():
 def test_question_incorrect_answer():
     question = Question("What is 2 + 2?", ["1", "2", "3", "4"], "4")
     assert not question.is_correct("2")
-```
+```  
+
+![alt text](../Imagenes/Tarea%201/Tarea1_1.PNG)  
