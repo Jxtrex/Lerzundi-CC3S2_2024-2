@@ -14,18 +14,18 @@ def convertir_palabra_a_numero(palabra):
     return numeros.get(palabra, 0)  # Retornar 0 si la palabra no está en el diccionario
 
 # Dado que he comido {cukes:d} pepinos
-@given('he comido {cukes:d} pepinos')
+@given('que he comido {cukes} pepinos')
 def step_given_eaten_cukes(context, cukes):
     pattern_1 = re.compile(r'(menos|más) de (\d)* pepinos')
-    match = pattern_1.match(cukes)
+    match = pattern_1.search(cukes)
     if match:
-        belly.comer(match.group(2))
+        belly.comer(int(match.group(2)))
     else:
         pattern_2 = re.compile(r'(\d)* pepinos')
-        match = pattern_2
-        belly.comer(match.group(1))
+        match = pattern_2.search(cukes)
+        belly.comer(int(match.group(1)))
 # Cuando espero "{time_description}"
-@when('espero "{time_description}"')
+@when('espero {time_description}')
 def step_when_wait_time_description(context, time_description):
     # Expresión regular para encontrar horas y minutos en una descripción con palabras o números
     pattern = re.compile(r'(?:(\w+)\s*horas?)?\s*(?:(\w+)\s*minutos?)?')
