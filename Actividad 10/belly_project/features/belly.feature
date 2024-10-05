@@ -71,6 +71,6 @@ Característica: Característica del Estómago
     Entonces mi estómago debería gruñir
 
   Escenario: comer una cantidad no válida de pepinos
-    Dado que he ingresado una cantiodad no válida de pepinos
+    Dado que he ingresado una cantidad no válida de pepinos
     Cuando espero cualquier cantidad de tiempo
     Entonces el sistema debería arrojar un error de cantidad no válida
