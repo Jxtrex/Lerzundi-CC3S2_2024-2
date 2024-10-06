@@ -1,1 +1,2 @@
-behave
+behave>=1.2.6
+pytest>=8.3.3

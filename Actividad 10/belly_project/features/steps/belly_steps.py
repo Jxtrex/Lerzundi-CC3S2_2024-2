@@ -69,10 +69,12 @@ def step_given_eaten_intesifier_cukes(context, cukes):
     else:
         raise ValueError(f"No se pudo interpretar el número de pepinos")
 
-#Dado que he comido una gran cantidad de pepinos
-@given('que he comido {cukes:d} pepinos')
-def step_given_large_quantity_of_cukes(context,cukes):
+
+# Dado que he comido una gran cantidad de pepinos
+@given("que he comido {cukes:d} pepinos")
+def step_given_large_quantity_of_cukes(context, cukes):
     belly.comer(cukes)
+
 
 # Dado que he comido una cantidad fraccionaria de pepinos
 @given("que he comido {cukes:f} pepinos")
@@ -119,7 +121,7 @@ def step_when_wait_random_time(context, min_time, max_time):
 def step_when_wait_time_description(context, time_description):
     # Expresión regular para encontrar horas y minutos en una descripción con palabras o números
     pattern = re.compile(
-        r"\"?(?:(\w+)\s*horas?)?\s*y?\s*(?:(\w+)\s*minutos?)?\s*y?\s*(?:(\w+)\s*segundos?)?\"?"
+        r"\"?(?:(\w+)\s*horas?)?\s*(?:y|and|,)?\s*(?:(\w+)\s*minutos?)?\s*(?:y|and|,)?\s*(?:(\w+)\s*segundos?)?\"?"
     )
     match = pattern.search(time_description.lower())
     print(match)
@@ -175,11 +177,21 @@ def step_then_invalid_cucumber_amount(context):
         assert belly.pepinos_comidos < 100, "Cantidad de pepinos no válida"
     except AssertionError as e:
         print(str(e))
-        
+
+
 # Entonces debería ocurrir un error de cantidad negativa
 @then("debería ocurrir un error de cantidad negativa")
 def step_then_negativa_cucumber_amount(context):
     try:
-        assert belly.pepinos_comidos>=0, "Cantidad de pepinos negativa"
+        assert belly.pepinos_comidos >= 0, "Cantidad de pepinos negativa"
+    except AssertionError as e:
+        print(str(e))
+
+
+# Entonces debería haber comido {cukes} pepinos
+@then("debería haber comido {cukes} pepinos")
+def step_then_shoudl_eaten_cukes(context, cukes):
+    try:
+        assert belly.pepinos_comidos == cukes
     except AssertionError as e:
         print(str(e))
