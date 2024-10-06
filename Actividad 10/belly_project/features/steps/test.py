@@ -1,4 +1,4 @@
-import re
+""" import re
 
 str1 = "menos de 10 pepinos"
 str2 = "42 pepinos"
@@ -10,4 +10,4 @@ print("grupo(1): " + match_1.group(1))
 
 pattern_2 = re.compile(r'(\d+)\spepinos\b')
 match_2 = pattern_2.match(str2)
-print(match_2.groups())
+print(match_2.groups()) """
