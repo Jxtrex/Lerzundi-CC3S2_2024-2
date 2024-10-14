@@ -1,5 +1,6 @@
 from datetime import date, timedelta
-from model import Batch, OrderLine, allocate
+from model import Batch, OrderLine, allocate, OutOfStock
+import pytest
 
 
 def test_prefers_current_stock_batches_to_shipments():
@@ -45,9 +46,9 @@ def test_returns_allocated_branch_ref():
     assert allocation == in_stock_batch.reference
 
 
-# def test_raises_out_of_stock_exception_if_cannot_allocate():
-#     batch = Batch("batch1", "SMALL-FORK", 10, eta=date.today())
-#     allocate(OrderLine("order1", "SMALL-FORK", 10), [batch])
+def test_raises_out_of_stock_exception_if_cannot_allocate():
+    batch = Batch("batch1", "SMALL-FORK", 10, eta=date.today())
+    allocate(OrderLine("order1", "SMALL-FORK", 10), [batch])
 
-#     with pytest.raises(OutOfStock, match="SMALL-FORK"):
-#         allocate(OrderLine("order2", "SMALL-FORK", 1), [batch])
+    with pytest.raises(OutOfStock, match="SMALL-FORK"):
+        allocate(OrderLine("order2", "SMALL-FORK", 1), [batch])

@@ -33,7 +33,6 @@ class Batch:
             return False
         return other.reference == self.reference
 
-
     # Typically, __hash__ is implemented in classes that are immutable (like Value Objects) to ensure that the hash value remains consistent throughout the object's lifetime
     # For value objects, the hash should be based on all the value attributes, and we should ensure that the objects are immutable. We get this for free by specifying @frozen=True on the dataclass
     # For entities, the simplest option is to say that the hash is None
@@ -67,11 +66,16 @@ class Batch:
         return self.sku == line.sku and self.available_quantity >= line.qty
 
 
-# Domain Service Function
-def allocate(line: OrderLine, batches: List[Batch]) -> str:
-    batch = next(b for b in sorted(batches) if b.can_allocate(line))
-    batch.allocate(line)
-    return batch.reference
-
 class OutOfStock(Exception):
     pass
+
+
+# Domain Service Function
+# Domain services are not the same thing as the services from the service layer, although they are often closely related. A domain service represents a business concept or process, whereas a service-layer service represents a use case for your application. Often the service layer will call a domain service.
+def allocate(line: OrderLine, batches: List[Batch]) -> str:
+    try:
+        batch = next(b for b in sorted(batches) if b.can_allocate(line))
+        batch.allocate(line)
+        return batch.reference
+    except StopIteration:
+        raise OutOfStock(f"Out of stock for sku {line.sku}")
