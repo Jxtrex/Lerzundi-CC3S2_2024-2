@@ -10,6 +10,7 @@ requests==2.31.0
 # Probando las dependencias
 pytest==7.1.2          # Reemplazo de nose
 pytest-cov==3.0.0      # Reemplazo de pinocchio para cobertura
+pytest-random-order==1.1.1 # Ejecución de pruebas en orden aleatorio
 coverage==6.3.2
 factory-boy==3.2.1     # Versión actualizada
 pylint==2.14.0
